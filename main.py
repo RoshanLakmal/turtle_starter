@@ -1,18 +1,35 @@
-from turtle import Turtle, Screen
+import turtle as t
 import random
 
-turtle_start = Turtle()
+t.colormode(255)
+turtle_start = t.Turtle()
+
 turtle_start.shape("turtle")
 
-#walk
-color_list = ["red", "blue", "green", "pink", "black", "orange", "gold", "yellow"]
+def random_color():
+    r = random.randint(0,255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    ran_color = (r,g,b)
+    return ran_color
+
 directions = [0,90,180,270]
 turtle_start.pensize(15)
 turtle_start.speed("fastest")
 for _ in range(200):
-    turtle_start.color(random.choice(color_list))
+    turtle_start.color(random_color())
     turtle_start.forward(100)
     turtle_start.setheading(random.choice(directions))
+
+#walk
+# color_list = ["red", "blue", "green", "pink", "black", "orange", "gold", "yellow"]
+# directions = [0,90,180,270]
+# turtle_start.pensize(15)
+# turtle_start.speed("fastest")
+# for _ in range(200):
+#     turtle_start.color(random.choice(color_list))
+#     turtle_start.forward(100)
+#     turtle_start.setheading(random.choice(directions))
 # for _ in range(200):
 #     turtle_start.color(random.choice(color_list))
 #     random_number = random.randint(0, 3)
