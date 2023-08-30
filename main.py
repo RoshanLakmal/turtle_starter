@@ -5,7 +5,9 @@ t.colormode(255)
 turtle_start = t.Turtle()
 
 turtle_start.shape("turtle")
+turtle_start.speed("fastest")
 
+#spirograph
 def random_color():
     r = random.randint(0,255)
     g = random.randint(0, 255)
@@ -13,13 +15,32 @@ def random_color():
     ran_color = (r,g,b)
     return ran_color
 
-directions = [0,90,180,270]
-turtle_start.pensize(15)
-turtle_start.speed("fastest")
-for _ in range(200):
-    turtle_start.color(random_color())
-    turtle_start.forward(100)
-    turtle_start.setheading(random.choice(directions))
+def draw_spirograph(size_of_gap):
+    for _ in range(int(360/size_of_gap)):
+        turtle_start.color(random_color())
+        turtle_start.circle(100)
+        turtle_start.setheading(turtle_start.heading() + size_of_gap)
+
+draw_spirograph(5)
+# for degree in range(1,361):
+#     turtle_start.color(random_color())
+#     turtle_start.circle(100)
+#     turtle_start.setheading(degree)
+
+# def random_color():
+#     r = random.randint(0,255)
+#     g = random.randint(0, 255)
+#     b = random.randint(0, 255)
+#     ran_color = (r,g,b)
+#     return ran_color
+#
+# directions = [0,90,180,270]
+# turtle_start.pensize(15)
+# turtle_start.speed("fastest")
+# for _ in range(200):
+#     turtle_start.color(random_color())
+#     turtle_start.forward(100)
+#     turtle_start.setheading(random.choice(directions))
 
 #walk
 # color_list = ["red", "blue", "green", "pink", "black", "orange", "gold", "yellow"]
